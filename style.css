@@ -26,7 +26,7 @@ body {
 .screen {
     display: flex;
     flex-wrap: wrap;
-    width: 280px;
+    width: 265px;
     height: 140px;
     justify-content: flex-end;
     align-items: flex-end;
