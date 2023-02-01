@@ -52,8 +52,8 @@ body {
     border: none;
     border-radius: 50%;
     color: #fff;
-    background-color: #333030;
     font-size: 20px;
+    font-weight: 600;
     cursor: pointer;
 }
 
@@ -65,23 +65,38 @@ body {
     text-align: left;
     padding-left: 1em;
     color: #fff;
-    background-color: #333030;
     font-size: 20px;
     cursor: pointer;
 }
 
-.small-btn:hover {
-    background-color: #464545;
-    transition: 0.3s;
-}
-
-.large-btn:hover {
-    background-color: #464545;
-    transition: 0.3s;
-}
-
 .grid-item:nth-child(17) {
     grid-column: 1 / span 2;
+}
+
+.btn-gray {
+    background-color: #333030;
+}
+
+.btn-white {
+    background-color: #c2c2c2;
+    color: black;
+}
+
+.btn-orange {
+    background-color: #c4840d;
+}
+
+.btn-gray:active {
+    background-color: #5a5858;
+}
+
+.btn-white:active {
+    background-color: #ffffff;
+}
+
+.btn-orange:active {
+    background-color: #fff;
+    color: #c4840d;
 }
 
 .footer {
