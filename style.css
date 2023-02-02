@@ -25,7 +25,6 @@ body {
 
 .screen {
     display: flex;
-    flex-wrap: wrap;
     width: 265px;
     height: 140px;
     justify-content: flex-end;
@@ -94,7 +93,16 @@ body {
     background-color: #ffffff;
 }
 
-.btn-orange:active {
+.btn-orange-active {
+    background-color: #fff;
+    color: #c4840d;
+}
+
+.btn-equals {
+    background-color: #c4840d;
+}
+
+.btn-equals:active {
     background-color: #fff;
     color: #c4840d;
 }
