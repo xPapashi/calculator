@@ -1,13 +1,14 @@
 const display = document.querySelector("#screen-display");
-let initialDisplayValue = 0;
-let finalDisplayValue = 0;
+let displayValue = 0;
+let firstNum = 0;
+let secondNum = 0;
 let selectedOperator = "";
 
 function add(num1, num2) {
   return num1 + num2;
 }
 
-function subract(num1, num2) {
+function subtract(num1, num2) {
   return num1 - num2;
 }
 
@@ -24,13 +25,15 @@ function operate(operator) {
 }
 
 function changeScreen(element, text) {
-  return (element.innerText = text);
+  if (element.innerText === "0") {
+    return (element.innerText = text);
+  } else return (element.innerText = text);
 }
 
 function selectOperator(operator) {
-    selected = operator;
-    console.log(`Selected operator: ${selected}`)
-    return selected;
+  selected = operator;
+  console.log(`Selected operator: ${selected}`);
+  return selected;
 }
 
 function getButtons() {
@@ -40,31 +43,35 @@ function getButtons() {
     button.addEventListener("click", (e) => {
       switch (e.target.innerText) {
         case "AC":
-          changeScreen(display, (initialDisplayValue = 0));
           selectOperator("AC");
+          changeScreen(display, (initialDisplayValue = 0));
+          firstNum = 0;
+          secondNum = 0;
           break;
         case "+/-":
-          selectOperator("+/-")
+          selectOperator("+/-");
           break;
         case "%":
-            selectOperator("%")
+          selectOperator("%");
           break;
         case "/":
-            selectOperator("/")
+          selectOperator("/");
           break;
-          case "x":
-            selectOperator("x")
+        case "x":
+          selectOperator("x");
           break;
-          case "-":
-            selectOperator("-")
-            changeScreen(display, operate(add(initialDisplayValue, 1)));
+        case "-":
+          selectOperator("-");
+          changeScreen(display, operate(add(initialDisplayValue, 1)));
           break;
-          case "+":
-            selectOperator("+")
-            changeScreen(display, operate(add(initialDisplayValue, 1)));
+        case "+":
+          selectOperator("+");
+          firstNum = Number(display.innerText);
           break;
-          case "=":
-            selectOperator("=")
+        case "=":
+          selectOperator("=");
+          secondNum = Number(display.innerText);
+          changeScreen(display, operate(add(firstNum, secondNum)));
           break;
         case "1":
           changeScreen(display, (initialDisplayValue = 1));
