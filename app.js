@@ -60,6 +60,12 @@ function changeScreen(element, text, operator) {
   switch (operator) {
     case "AC":
       return (element.innerText = text);
+    case "+/-":
+      if (element.innerText > 0) {
+        return (element.innerText = "-" + text);
+      } else {
+        return element.innerText = element.innerText *-1;
+      }
     case "%":
       return (element.innerText = text);
     case "/":
@@ -96,6 +102,7 @@ function getButtons() {
           break;
         case "+/-":
           selectOperator("+/-");
+          changeScreen(display, Number(display.innerText), selectedOperator);
           break;
         case "%":
           selectOperator("%");
@@ -136,7 +143,6 @@ function getButtons() {
           removeActive();
           break;
         case "1":
-          // display.innerText += 1;
           changeScreen(display, (displayValue = 1), null);
           removeActive();
           break;
